@@ -1,81 +1,65 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Product Lens — демо отчётов</title>
+<title>Доступ по паролю</title>
 <style>
-  :root { --sber:#21a038; --sber-d:#0f7a2a; --ink:#18181b; --muted:#52525b; --line:#e4e4e7; --bg:#f4f4f5; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink);
-    font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:920px; margin:0 auto; padding:0 20px 64px; }
-  .hero { background:linear-gradient(135deg,var(--sber) 0%,var(--sber-d) 60%,#0c5d20 100%);
-    color:#fff; padding:56px 0 64px; }
-  .hero .wrap { padding-bottom:0; }
-  .eyebrow { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
-  h1 { font-size:38px; line-height:1.1; font-weight:850; margin:12px 0 10px; letter-spacing:-.02em; }
-  .lead { font-size:18px; line-height:1.5; max-width:640px; opacity:.94; margin:0; }
-  .panel { background:#fff; border:1px solid var(--line); border-radius:18px;
-    box-shadow:0 18px 48px rgba(15,23,42,.08); padding:26px; margin-top:-32px; }
-  .panel h2 { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
-    color:var(--muted); margin:0 0 16px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
-  a.card { display:block; text-decoration:none; color:inherit; border:1px solid var(--line);
-    border-radius:14px; padding:18px; transition:border-color .15s, box-shadow .15s, transform .15s; background:#fff; }
-  a.card:hover { border-color:var(--sber); box-shadow:0 10px 30px rgba(33,160,56,.14); transform:translateY(-2px); }
-  .card .scope { font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--sber-d); }
-  .card .title { font-size:19px; font-weight:800; margin:6px 0 8px; line-height:1.25; }
-  .card .desc { font-size:13px; color:var(--muted); line-height:1.5; }
-  .card .open { margin-top:14px; font-size:13px; font-weight:700; color:var(--sber-d); }
-  .note { margin-top:22px; font-size:13px; color:var(--muted); line-height:1.6;
-    border-top:1px solid var(--line); padding-top:16px; }
-  footer { color:var(--muted); font-size:12px; text-align:center; margin-top:40px; }
-</style>
-</head>
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:#0f7a2a; font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  .box { background:#fff; border-radius:18px; box-shadow:0 24px 60px rgba(0,0,0,.25);
+    padding:30px 28px; width:min(380px,calc(100vw - 32px)); text-align:center; }
+  .lock { font-size:40px; }
+  h1 { font-size:19px; margin:10px 0 4px; color:#18181b; }
+  p { font-size:13px; color:#52525b; margin:0 0 18px; }
+  input { width:100%; box-sizing:border-box; padding:12px 14px; font-size:16px;
+    border:1px solid #d4d4d8; border-radius:10px; margin-bottom:10px; }
+  button { width:100%; padding:12px; font-size:15px; font-weight:700; color:#fff;
+    background:#21a038; border:0; border-radius:10px; cursor:pointer; }
+  button:hover { background:#0f7a2a; }
+  .err { color:#b91c1c; font-size:13px; min-height:18px; margin-top:10px; }
+</style></head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Продуктовая аналитика</div>
-      <h1>Product Lens</h1>
-      <p class="lead">Разбор клиентского пути продукта: барьеры воронки, сравнение с
-        конкурентами, потери и точки роста — собранные в один читаемый отчёт.</p>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="panel">
-      <h2>Примеры разборов</h2>
-      <div class="grid">
-        <a class="card" href="otchet-debit-card-onboarding.html">
-          <div class="scope">Оформление</div>
-          <div class="title">Дебетовая карта</div>
-          <div class="desc">Клиентский путь оформления с двумя конкурентами: барьеры формы заявки,
-            сравнение воронок.</div>
-          <div class="open">Открыть отчёт →</div>
-        </a>
-        <a class="card" href="otchet-deposit-opening.html">
-          <div class="scope">Открытие</div>
-          <div class="title">Вклад</div>
-          <div class="desc">Информационно-финансовый сценарий: ясность условий, тарифные блоки,
-            качество контента.</div>
-          <div class="open">Открыть отчёт →</div>
-        </a>
-        <a class="card" href="otchet-mortgage-application.html">
-          <div class="scope">Оформление</div>
-          <div class="title">Ипотека</div>
-          <div class="desc">Длинный путь с высоким отказом: trust-барьеры, сложность формы,
-            пробелы в доказательствах.</div>
-          <div class="open">Открыть отчёт →</div>
-        </a>
-      </div>
-      <p class="note">Демонстрационные отчёты на эталонных (golden) данных. Страница полностью
-        статична: открывается без входа, ничего не загружает извне и не передаёт данные на сервер —
-        только просмотр.</p>
-    </section>
-    <footer>Product Lens · демо</footer>
-  </main>
-</body>
-</html>
+  <form class="box" id="f" autocomplete="off">
+    <div class="lock">🔒</div>
+    <h1>Доступ по паролю</h1>
+    <p>Страница защищена. Введите пароль для просмотра.</p>
+    <input type="password" id="pw" placeholder="Пароль" autofocus>
+    <button type="submit">Открыть</button>
+    <div class="err" id="e"></div>
+  </form>
+<script>
+const DATA = {"salt": "2dguKfoHffJpSeT3129c1w==", "iv": "qhH17lJVPaUwWbtf", "ct": "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", "iter": 250000};
+const KEYNAME = "pl_unlock_pw_v1";
+function b64d(s){ return Uint8Array.from(atob(s), c => c.charCodeAt(0)); }
+async function deriveKey(pw){
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name:"PBKDF2", salt:b64d(DATA.salt), iterations:DATA.iter, hash:"SHA-256" },
+    base, { name:"AES-GCM", length:256 }, false, ["decrypt"]);
+}
+async function decrypt(pw){
+  const key = await deriveKey(pw);
+  const pt = await crypto.subtle.decrypt({ name:"AES-GCM", iv:b64d(DATA.iv) }, key, b64d(DATA.ct));
+  return new TextDecoder().decode(pt);
+}
+function render(html){ document.open(); document.write(html); document.close(); }
+async function tryUnlock(pw, fromCache){
+  try {
+    const html = await decrypt(pw);
+    try { sessionStorage.setItem(KEYNAME, pw); } catch(_e) {}
+    render(html);
+    return true;
+  } catch(_e) {
+    if (!fromCache) document.getElementById("e").textContent = "Неверный пароль";
+    if (fromCache) { try { sessionStorage.removeItem(KEYNAME); } catch(_e2) {} }
+    return false;
+  }
+}
+document.getElementById("f").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  document.getElementById("e").textContent = "";
+  tryUnlock(document.getElementById("pw").value, false);
+});
+(function(){ try { const c = sessionStorage.getItem(KEYNAME); if (c) tryUnlock(c, true); } catch(_e) {} })();
+</script>
+</body></html>
