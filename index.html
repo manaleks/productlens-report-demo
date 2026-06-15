@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Product Lens — демо отчётов</title>
+<style>
+  :root { --sber:#21a038; --sber-d:#0f7a2a; --ink:#18181b; --muted:#52525b; --line:#e4e4e7; --bg:#f4f4f5; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:920px; margin:0 auto; padding:0 20px 64px; }
+  .hero { background:linear-gradient(135deg,var(--sber) 0%,var(--sber-d) 60%,#0c5d20 100%);
+    color:#fff; padding:56px 0 64px; }
+  .hero .wrap { padding-bottom:0; }
+  .eyebrow { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+  h1 { font-size:38px; line-height:1.1; font-weight:850; margin:12px 0 10px; letter-spacing:-.02em; }
+  .lead { font-size:18px; line-height:1.5; max-width:640px; opacity:.94; margin:0; }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:18px;
+    box-shadow:0 18px 48px rgba(15,23,42,.08); padding:26px; margin-top:-32px; }
+  .panel h2 { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--muted); margin:0 0 16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  a.card { display:block; text-decoration:none; color:inherit; border:1px solid var(--line);
+    border-radius:14px; padding:18px; transition:border-color .15s, box-shadow .15s, transform .15s; background:#fff; }
+  a.card:hover { border-color:var(--sber); box-shadow:0 10px 30px rgba(33,160,56,.14); transform:translateY(-2px); }
+  .card .scope { font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--sber-d); }
+  .card .title { font-size:19px; font-weight:800; margin:6px 0 8px; line-height:1.25; }
+  .card .desc { font-size:13px; color:var(--muted); line-height:1.5; }
+  .card .open { margin-top:14px; font-size:13px; font-weight:700; color:var(--sber-d); }
+  .note { margin-top:22px; font-size:13px; color:var(--muted); line-height:1.6;
+    border-top:1px solid var(--line); padding-top:16px; }
+  footer { color:var(--muted); font-size:12px; text-align:center; margin-top:40px; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Продуктовая аналитика</div>
+      <h1>Product Lens</h1>
+      <p class="lead">Разбор клиентского пути продукта: барьеры воронки, сравнение с
+        конкурентами, потери и точки роста — собранные в один читаемый отчёт.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Примеры разборов</h2>
+      <div class="grid">
+        <a class="card" href="otchet-debit-card-onboarding.html">
+          <div class="scope">Оформление</div>
+          <div class="title">Дебетовая карта</div>
+          <div class="desc">Клиентский путь оформления с двумя конкурентами: барьеры формы заявки,
+            сравнение воронок.</div>
+          <div class="open">Открыть отчёт →</div>
+        </a>
+        <a class="card" href="otchet-deposit-opening.html">
+          <div class="scope">Открытие</div>
+          <div class="title">Вклад</div>
+          <div class="desc">Информационно-финансовый сценарий: ясность условий, тарифные блоки,
+            качество контента.</div>
+          <div class="open">Открыть отчёт →</div>
+        </a>
+        <a class="card" href="otchet-mortgage-application.html">
+          <div class="scope">Оформление</div>
+          <div class="title">Ипотека</div>
+          <div class="desc">Длинный путь с высоким отказом: trust-барьеры, сложность формы,
+            пробелы в доказательствах.</div>
+          <div class="open">Открыть отчёт →</div>
+        </a>
+      </div>
+      <p class="note">Демонстрационные отчёты на эталонных (golden) данных. Страница полностью
+        статична: открывается без входа, ничего не загружает извне и не передаёт данные на сервер —
+        только просмотр.</p>
+    </section>
+    <footer>Product Lens · демо</footer>
+  </main>
+</body>
+</html>
