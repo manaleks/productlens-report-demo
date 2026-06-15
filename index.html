@@ -4304,58 +4304,19 @@ html{background:#07090A}
 }
 </style>
 <style>
-  .gate-wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--pl-bg-0,#0b0d0e);z-index:50}
-  .gate-box{background:var(--pl-bg-1,#fff);border:1px solid var(--pl-line,#e4e4e7);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.28);padding:28px;width:min(360px,calc(100vw - 32px));text-align:center}
-  .gate-box input{width:100%;box-sizing:border-box;padding:11px 13px;font-size:16px;border:1px solid var(--pl-line,#d4d4d8);border-radius:10px;margin:14px 0 10px;background:transparent;color:inherit}
-  .gate-err{color:#dc2626;font-size:13px;min-height:18px}
-  .portal-hero{padding:18px 0 6px}
-  .portal-hero .eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--pl-text-2,#71717a)}
-  .portal-hero h1{font-size:24px;font-weight:850;letter-spacing:-.01em;margin:4px 0 0}
-  .portal-hero h1 span{color:var(--pl-accent,#21a038)}
-  .portal-hero p{font-size:13px;color:var(--pl-text-1,#52525b);margin:6px 0 0}
-  .rpt-frame{width:100%;border:0;border-radius:14px;background:#fff;min-height:calc(100vh - 150px);box-shadow:0 12px 36px rgba(16,24,40,.10)}
-  .rpt-back{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;font-weight:700;color:var(--pl-accent,#21a038);background:none;border:0;padding:8px 0;font-family:inherit}
-  /* Светлая схема и фиксированная палитра — не зависим от тёмной темы ОС/ui.css. */
-  :root{color-scheme:light;--pl-bg-0:#f5f6f8;--pl-bg-1:#ffffff;--pl-bg-2:#f1f3f5;--pl-text-0:#18181b;--pl-text-1:#3f3f46;--pl-text-2:#71717a;--pl-line:#e7e8ec;--pl-accent:#21a038}
-  /* Явная поверхность списка/карточек — чтобы не зависеть от вложенности ui.css. */
-  html{background:#f5f6f8}
-  body.ui-body{background:#f5f6f8;color:#18181b;min-height:100vh}
-  .portal-hero h1{color:#18181b}
-  .ui-shell{max-width:1080px;margin:0 auto;padding:0 20px 56px}
-  .subs-feed{display:grid;gap:12px;margin-top:8px}
-  .subs-feed-bar{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--pl-text-2,#71717a);margin:14px 0 2px}
-  .subs-card{display:flex;align-items:center;gap:18px;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--pl-line,#e7e8ec);border-radius:16px;padding:18px 20px;transition:border-color .15s,box-shadow .15s,transform .15s}
-  .subs-card:hover{border-color:var(--pl-accent,#21a038);box-shadow:0 14px 34px rgba(16,24,40,.09);transform:translateY(-1px)}
-  .subs-card-body{min-width:0;flex:1}
-  .subs-card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
-  .subs-type-badge{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--pl-text-2,#71717a);border:1px solid var(--pl-line,#e7e8ec);border-radius:999px;padding:3px 9px;background:#fafafa}
-  .subs-card-title{font-size:18px;font-weight:850;letter-spacing:-.01em;line-height:1.2;color:#18181b}
-  .subs-card-sub{font-size:13px;color:var(--pl-text-2,#71717a);margin-top:3px}
-  .subs-card-tldr{font-size:13px;line-height:1.55;color:var(--pl-text-1,#3f3f46);margin-top:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .subs-card-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .subs-stat{font-size:11px;font-weight:700;color:var(--pl-text-1,#52525b);background:#f1f3f5;border-radius:999px;padding:4px 10px}
-  .subs-card-arrow{font-size:22px;color:#c4c7cd;flex:0 0 auto;transition:color .15s,transform .15s}
-  .subs-card:hover .subs-card-arrow{color:var(--pl-accent,#21a038);transform:translateX(2px)}
-  .ui-badge.ready{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;color:#166534;background:#ecfdf5;border:1px solid #bbf7d0;border-radius:999px;padding:3px 10px}
-  /* Монитор: тайлы и список с явной поверхностью. */
-  .ui-card{background:#fff;border:1px solid var(--pl-line,#e7e8ec);border-radius:16px}
-  .pl-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
-  @media(min-width:900px){.pl-tiles{grid-template-columns:repeat(5,1fr)}}
-  .pl-tile{background:#fff;border:1px solid var(--pl-line,#e7e8ec);border-radius:16px;padding:16px 18px}
-  .pl-tile .lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--pl-text-2,#71717a)}
-  .pl-tile .val{font-size:30px;font-weight:850;letter-spacing:-.02em;margin-top:8px;line-height:1;color:#18181b}
-  .pl-tile .hint{font-size:12px;color:var(--pl-text-2,#71717a);margin-top:6px}
-  .pl-list{background:#fff;border:1px solid var(--pl-line,#e7e8ec);border-radius:16px;padding:6px 18px;margin-top:16px}
-  .pl-list .row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--pl-line,#eef0f3)}
-  .pl-list .row:last-child{border-bottom:0}
-  .pl-list .row .nm{font-size:14px;font-weight:700;color:#18181b}
-  .pl-list .row .sc{font-size:12px;color:var(--pl-text-2,#71717a);margin-top:2px}
-  .pl-open{font-size:13px;font-weight:700;color:var(--pl-accent,#0f7a2a);border:1px solid #bbf7d0;background:#ecfdf5;border-radius:10px;padding:7px 14px;text-decoration:none}
-  .pl-open:hover{background:#dcfce7}
+  /* Минимум поверх НАСТОЯЩЕЙ тёмной темы (ui.css). Карточки/тайлы/hero — реальные классы. */
+  .gate-wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#07090a;z-index:60}
+  .gate-box{background:#15181b;border:1px solid rgba(255,255,255,.10);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.55);padding:28px;width:min(360px,calc(100vw - 32px));text-align:center;color:#e8eaed}
+  .gate-box input{width:100%;box-sizing:border-box;padding:11px 13px;font-size:16px;border:1px solid rgba(255,255,255,.16);border-radius:10px;margin:14px 0 10px;background:#0e1113;color:#e8eaed}
+  .gate-err{color:#fca5a5;font-size:13px;min-height:18px}
+  .rpt-frame{width:100%;border:0;border-radius:14px;background:#fff;min-height:calc(100vh - 150px);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .rpt-back{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;font-weight:700;color:var(--pl-accent,#3ecf67);background:none;border:0;padding:12px 0;font-family:inherit}
+  .subs-card-tldr{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   [hidden]{display:none!important}
 </style>
 </head>
-<body class="ui-body">
+<body class="ui">
+<div class="ui-bg" aria-hidden="true"><div class="ui-bloom b1"></div><div class="ui-bloom b2"></div><div class="ui-grid"></div><div class="ui-grain"></div></div>
 <div id="gate" class="gate-wrap">
   <form class="gate-box" id="gateForm" autocomplete="off">
     <div style="font-size:34px">🔒</div>
@@ -4390,7 +4351,7 @@ html{background:#07090A}
 </div>
 
 <script>
-const SALT = "beVTNUp2+JvSjoqcH26KFw==", META = {"iv": "SCMWCezHPMWFBdLV", "ct": "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"}, ITERS = 200000, REPORTS_ENC = {};
+const SALT = "Ww9/vpjSoPL8BRcJqnNQDA==", META = {"iv": "B/tp9zfLlWAQPbNs", "ct": "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"}, ITERS = 200000, REPORTS_ENC = {};
 const KEYNAME = "pl_portal_pw_v2";
 let KEY = null, DATA = null;
 function b64d(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
@@ -4425,23 +4386,26 @@ function analysesHTML(reports){
         <div class="subs-card-stats">${stats}</div>
       </div><span class="subs-card-arrow">→</span></a></div>`;
   }
-  return `<div class="portal-hero"><div class="eyebrow">Реестр аналитик</div>
-    <h1>Все <span>разборы</span></h1><p>Готовые продуктовые разборы. Доступ только на чтение.</p></div>
+  return `<section class="ui-hero"><div class="ui-eyebrow">Реестр аналитик</div>
+    <h1 class="ui-h1">Все <span>разборы</span></h1>
+    <p class="ui-hero-sub">Готовые продуктовые разборы. Доступ только на чтение.</p></section>
     <div class="subs-feed"><div class="subs-feed-bar">${reports.length} разбор(ов)</div>${cards}</div>`;
 }
 function monitorHTML(d){
   const reports=d.reports, products=[...new Set(reports.map(r=>r.product))];
   const sum=k=>reports.reduce((a,r)=>a+(r[k]||0),0);
-  const tile=(l,v,h)=>`<div class="pl-tile"><div class="lbl">${esc(l)}</div><div class="val">${esc(v)}</div>${h?`<div class="hint">${esc(h)}</div>`:""}</div>`;
+  const tile=(l,v,h)=>`<div class="ui-card p-4"><div class="text-[10px] font-bold uppercase tracking-wider text-ink-500">${esc(l)}</div>
+    <div class="mt-2 text-3xl font-extrabold tracking-tightest">${esc(v)}</div>${h?`<div class="mt-1 text-xs text-ink-500">${esc(h)}</div>`:""}</div>`;
   const tiles=tile("Разборов",reports.length,"готовых")+tile("Продуктов",products.length,products.join(", ").slice(0,48))
     +tile("Находок",sum("insights"),"в инсайтах")+tile("Рекомендаций",sum("recommendations"),"к внедрению")+tile("Конкурентов",sum("competitors"),"в сравнении");
   let rows="";
-  for(const r of reports) rows+=`<div class="row"><div><div class="nm">${esc(r.product)}</div><div class="sc">${esc(r.scope)}</div></div>
-    <a class="pl-open" href="#" onclick="openReport('${esc(r.id)}');return false">Открыть</a></div>`;
-  return `<div class="portal-hero"><div class="eyebrow">Обзор</div><h1>Монитор · <span>статистика</span></h1>
-    <p>Сводка по готовым разборам. Доступ только на чтение.</p></div>
-    <div class="pl-tiles">${tiles}</div>
-    <div class="pl-list"><div class="subs-feed-bar" style="margin:8px 0 2px">Разборы</div>${rows}</div>`;
+  for(const r of reports) rows+=`<div class="flex items-center justify-between py-3" style="border-bottom:1px solid var(--pl-line,rgba(255,255,255,.08))">
+    <div style="min-width:0"><div class="text-sm font-semibold">${esc(r.product)}</div><div class="text-xs text-ink-500">${esc(r.scope)}</div></div>
+    <a class="ui-btn-ghost" href="#" onclick="openReport('${esc(r.id)}');return false">Открыть</a></div>`;
+  return `<section class="ui-hero"><div class="ui-eyebrow">Обзор</div><h1 class="ui-h1">Монитор · <span>статистика</span></h1>
+    <p class="ui-hero-sub">Сводка по готовым разборам. Доступ только на чтение.</p></section>
+    <div class="grid grid-cols-2 gap-3 xl:grid-cols-5">${tiles}</div>
+    <div class="ui-card p-5" style="margin-top:16px"><div class="text-[10px] font-bold uppercase tracking-wider text-ink-500" style="margin-bottom:6px">Разборы</div>${rows}</div>`;
 }
 async function openReport(id){
   const frame=document.getElementById("rframe");
